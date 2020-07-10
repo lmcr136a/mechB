@@ -12,6 +12,9 @@ class Post(models.Model):
     content = models.TextField('CONTENT',default='')
     pub_date = models.DateTimeField('PUBLISH DATA',default = timezone.now)
     mod_date = models.DateTimeField('MODIFY DATE',auto_now=True)
+
+    def __str__(self):
+        return self.title
 '''
     class Meta:
         verbose_name='post'
@@ -24,8 +27,7 @@ class Post(models.Model):
         self.pub_date = timezone.now()
         self.save()
 '''
-    def __str__(self):
-        return self.title
+
 '''
     def get_absolute_url(self):
        return reverse('blog:post_detail',args=(self.id,))
