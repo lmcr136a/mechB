@@ -12,12 +12,13 @@ class Post(models.Model):
     content = models.TextField('CONTENT',default='')
     pub_date = models.DateTimeField('PUBLISH DATA',default = timezone.now)
     mod_date = models.DateTimeField('MODIFY DATE',auto_now=True)
-
+'''
     class Meta:
         verbose_name='post'
         verbose_name_plural='posts'
         db_table='blog_posts'
         ordering =['-mod_date',]
+        '''
 '''
     def publish(self):
         self.pub_date = timezone.now()
