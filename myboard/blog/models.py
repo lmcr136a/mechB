@@ -20,7 +20,7 @@ class Post(models.Model):
         ordering =['-mod_date',]
 
     def publish(self):
-        self.published_date = timezone.now()
+        self.pub_date = timezone.now()
         self.save()
 
     def __str__(self):
