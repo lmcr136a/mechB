@@ -7,7 +7,7 @@ from django.conf import settings
 
 
 class Post(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default='', null=True)
+   # author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default='', null=True)
     title = models.CharField(verbose_name='TITLE',max_length=100)
     content = models.TextField('CONTENT',default='')
     pub_date = models.DateTimeField('PUBLISH DATA',default = timezone.now)
@@ -15,6 +15,10 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def publish(self):
+        self.pub_date = timezone.now()
+        self.save()
 '''
     class Meta:
         verbose_name='post'
@@ -22,11 +26,6 @@ class Post(models.Model):
         db_table='blog_posts'
         ordering =['-mod_date',]
         '''
-'''
-    def publish(self):
-        self.pub_date = timezone.now()
-        self.save()
-'''
 
 '''
     def get_absolute_url(self):
