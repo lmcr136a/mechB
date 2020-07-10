@@ -18,11 +18,11 @@ class Post(models.Model):
         verbose_name_plural='posts'
         db_table='blog_posts'
         ordering =['-mod_date',]
-
+'''
     def publish(self):
         self.pub_date = timezone.now()
         self.save()
-
+'''
     def __str__(self):
         return self.title
 '''
