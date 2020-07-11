@@ -8,7 +8,7 @@ from django.conf import settings
 
 class Post(models.Model):
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default='', null=True)
+#    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default='', null=True)
     title = models.CharField(verbose_name='TITLE',max_length=100)
     content = models.TextField('CONTENT',default='')
     pub_date = models.DateTimeField('PUBLISH DATA',default = timezone.now)
