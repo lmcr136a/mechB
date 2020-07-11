@@ -7,6 +7,7 @@ from django.conf import settings
 
 
 class Post(models.Model):
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default='', null=True)
     title = models.CharField(verbose_name='TITLE',max_length=100)
     content = models.TextField('CONTENT',default='')
@@ -19,6 +20,7 @@ class Post(models.Model):
     def publish(self):
         self.pub_date = timezone.now()
         self.save()
+
 '''
     class Meta:
         verbose_name='post'
