@@ -8,7 +8,7 @@ from django.views.generic.dates import ArchiveIndexView, TodayArchiveView, YearA
 
 # Create your views here.
 def PostLV(request):
-    return render(request,'templates/blog/post_list.html'.{})
+    return render(request,'templates/blog/post_list.html',{})
 
 def PostDV(request):
     return render(request,'templates/blog/post_detail.html')
