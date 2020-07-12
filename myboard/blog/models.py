@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.urls import reverse
 from django.conf import settings
 
+
 # Create your models here.
 
 
@@ -26,8 +27,8 @@ class Post(models.Model):
         verbose_name_plural='posts'
         db_table='blog_posts'
         ordering =['-mod_date',]
-        '''
 
+'''
 '''
     def get_absolute_url(self):
        return reverse('blog:post_detail',args=(self.id,))

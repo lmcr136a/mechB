@@ -3,20 +3,23 @@
 <head>
     <meta charset="utf-8">
     <title>:: STEAMS BLOG</title>
-    <link rel="stylesheet" type="text/css" href="{% static '../../../myboard/static/post_list.css' %}">
+<!--    <link rel="stylesheet" type="text/css" href="../../static/post_list.css">
+-->
 </head>
 <body>
-    <h2 id="listTitle">Postt List</h2>
+    <h2 id="listTitle">Steams Blog</h2>
     <span>
         <a href="{%url 'blog:post_archive'%}">아카!</a>
     </span>
 
-    <p>
+    <div>
         {% for post in posts %}
-        <h3><a href="{ post.get_absolute_url}">{{post.title}}</a></h3>
-        {{post.mod_date | date:"N d, Y"}}
-    {% endfor %}
-    </p>
+            <h3><a href="{ posts.get_absolute_url}">{{post.title}}</a></h3>
+            <p>{{post.mod_date | date:"N d, Y"}}</p>
+            <p>{{post.content|linebreaksbr}}</p>
+        {% endfor %}
+    </div>
+
     <br>
     <div>
         {% if page_obj.has_previous %}
