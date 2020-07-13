@@ -1,33 +1,16 @@
+{% extends 'blog/base.html' %}
 {% load static %}
 
-<head>
-    <meta charset="utf-8">
-    <title>:: STEAMS BLOG - {{objext.title}}</title>
-    <link rel="stylesheet" type="text/css" href="{% static '../../../myboard/static/post_detail.css' %}">
-</head>
-<body>
-    <h2>{{object.title}}</h2>
 
-    <p>
-        {{object.mod_date | date:"j F Y"}}
-    </P>
-    <br>
-    <br>
-    <div>   
-        {{object.content | linebreaks}}
+{% block content %}    
+<div class="post">
+    {% if post.pub_date %}
+    <div class="date">
+        {{post.pub_date}}
     </div>
-    <div>
-        {% if page_obj.has_previous %}
-        <a href="?page={{page_obj.previous_page_number}}">Previous page</a>
-        {% endif %}
+    {% endif %}
 
-        Page {{ page_obj.numbeer}} of {{ page_obj.paginator.num_pages}}
-
-        {% if page_obj.has_next %}
-        <a href="?page={{page_obj.next_page_number">Next page</a>
-        {%endif%}
-    </div>
-    <div>
-        <a href="{% url 'blog:post_list' %}">back to list</a>
-    </div>
-</body>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content | linebreaksbr }}</p>
+</div>
+{% endblock %}

@@ -1,37 +1,15 @@
+{% extends 'blog/base.html' %}
 {% load static %}
 
-<head>
-    <meta charset="utf-8">
-    <title>:: STEAMS BLOG</title>
-<!--    <link rel="stylesheet" type="text/css" href="../../static/post_list.css">
---><    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
-</head>
-<body>
-    <h2 id="listTitle">Steams Blog</h2>
-    <span>
-        <a href="{%url 'blog:post_archive'%}">아카!</a>
-    </span>
-
-    <div>
+{% block content %}    
         {% for post in posts %}
-            <h3><a href="{ posts.get_absolute_url}">{{post.title}}</a></h3>
+        <div class="title">
+            <h3><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h3>
+        </div><div class="date">
             <p>{{post.mod_date | date:"N d, Y"}}</p>
+        </div><div class="content">
             <p>{{post.content|linebreaksbr}}</p>
+        </div>
         {% endfor %}
-    </div>
-
-    <br>
-    <div>
-        {% if page_obj.has_previous %}
-        <a href="?page={{page_obj.previous_page_number}}">Previous page</a>
-        {% endif %}
-
-        Page {{ page_obj.numbeer}} of {{ page_obj.paginator.num_pages}}
-
-        {% if page_obj.has_next %}
-        <a href="?page={{page.obj.next_page_number">Next page</a>
-        {%endif%}
-    </div>
-</body>
+{% endblock %}

@@ -5,12 +5,13 @@ app_name='blog'
 
 urlpatterns =[
     path('', views.PostLV, name='post_list'),
-    path('post/', views.PostLV, name='templates/blog/post_list'),
-    path('post/<int:pk>/',views.PostDV,name='post_detail'),
+    path('post/', views.PostLV, name='post_list'),
+    path('post/<int:pk>/',views.PostDV,name='tpoost_detail'),
     path('archive/',views.PostAV,name='post_archive'),
     path('archive/<int:year>/',views.PostYAV,name='post_year_archive'),
     path('archive/<int:year>/<int:month>/',views.PostMAV,name='post_month_archive'),
     path('archive/<int:year>/<int:month>/<int:day>/',views.PostDAV,name='post_day_archive'),
     path('archive/today/',views.PostTAV,name='post_today'),
+
 ]
 
