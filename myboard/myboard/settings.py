@@ -40,9 +40,18 @@ INSTALLED_APPS = [
     'blog',
 ]
 STATIC_URL = '/static/'
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+STATICFILES_DIRS=(
+    os.path.join(BASE_DIR,'static'),
+)
 
-
+#STATICFILES_DIRS = (
+#        "C:/box/myboard/static/",
+#        "C:/box/myboard/static/css")
+STATIC_ROOT = 'C:/box/myboard/'
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
