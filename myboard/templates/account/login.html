@@ -1,0 +1,23 @@
+{% extends 'account/login_base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h2>Log in</h2>        <br>
+
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        Username:        <br>
+        <input name="username" type="text">
+        <br>
+        Password:        <br>
+        <input name="password" type="password">
+
+        <br>
+        <br>
+        <input type="submit" class="btn" value="Log in">
+        <a href="{% url 'signup' %}" ><h5>Sign Up!</h5></a>
+    </form>
+</div>
+
+{% endblock %}
