@@ -12,6 +12,8 @@ urlpatterns =[
     path('archive/<int:year>/<int:month>/',views.PostMAV,name='post_month_archive'),
     path('archive/<int:year>/<int:month>/<int:day>/',views.PostDAV,name='post_day_archive'),
     path('archive/today/',views.PostTAV,name='post_today'),
+    path('post/new/',views.PostN, name='PostN'),
+    path('post/<int:pk>/edit/',views.PostE, name='PostE')
 
 ]
 
