@@ -5,7 +5,7 @@
 <div class="container">
     <h2>Log in</h2>        <br>
 
-    <form method="post" action="{% url 'login' %}">
+    <form method="post" action="{% url 'account:login' %}">
         {% csrf_token %}
         Username:        <br>
         <input name="username" type="text">
@@ -16,7 +16,7 @@
         <br>
         <br>
         <input type="submit" class="btn" value="Log in">
-        <a href="{% url 'signup' %}" ><h5>Sign Up!</h5></a>
+        <a href="{% url 'account:signup' %}" ><h5>Sign Up!</h5></a>
     </form>
 </div>
 

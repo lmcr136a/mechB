@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container">
     <h2>Sign up!</h2>
-    <form method="POST" action="{% url 'signup' %}">
+    <form method="POST" action="{% url 'account:signup' %}">
         {% csrf_token %}
         Username:
         <input name="username" type="text">

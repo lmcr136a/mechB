@@ -11,6 +11,9 @@ from django.views.generic.dates import ArchiveIndexView, TodayArchiveView, YearA
 
 
 # Create your views here.
+def Home(request):
+    return render(request,'templates/blog/Home.html')
+
 def PostLV(request):
     posts=Post.objects.filter(pub_date__lte=timezone.now()).order_by('pub_date')
     return render(request,'templates/blog/post_list.html',{'posts':posts})
