@@ -24,9 +24,9 @@ def login(request):
             auth.login(request, user)
             return redirect('blog:PostLV')
         else:
-            return render(request, 'templates/account/login.html', {'error': 'username of password is incorrect!!!'})
+            return render(request, 'templates/account/re_login.html', {'error': 'username of password is incorrect!!!'})
     else:
-        return render(request, 'templates/account/login.html', {})
+        return render(request, 'templates/account/re_login.html', {})
 
 
 def login_pg(request):
@@ -39,4 +39,4 @@ def signup_pg(request):
 
 def logout(request):
     auth.logout(request)
-    return redirect('blog:PostLV')
+    return redirect('blog:Home')

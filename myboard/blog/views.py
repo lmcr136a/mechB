@@ -51,12 +51,19 @@ def PostE(request,pk):
     if request.method == "POST":
         form = PostForm(request.POST,instance=post)
         if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.mod_date=timezone.now()
-            post.save()
+            if post.author == request.user:
+                post = form.save(commit=False)
+                post.mod_date=timezone.now()
+                post.save()
             return redirect('blog:PostDV', pk=post.pk)
+        else: render(request, 'blog/author_error.html',{})
     else:
         form=PostForm(instance=post)
     return render(request,'blog/post_edit.html', {'form':form})
+
+def delete(request, post_id=1):
+    post_to_delete=Post.objects.get(id=post_id)
+    post_to_delete.delete()
+    posts=Post.objects.filter(pub_date__lte=timezone.now()).order_by('pub_date')
+    return render(request,'templates/blog/post_list.html',{'posts':posts})
 
