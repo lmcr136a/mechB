@@ -36,6 +36,7 @@ def PostN(request):
     form = PostForm()
     if request.method == "POST":
         form = PostForm(request.POST)
+        post = form.save(commit=False)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
