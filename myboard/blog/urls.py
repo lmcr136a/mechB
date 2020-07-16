@@ -14,6 +14,6 @@ urlpatterns =[
 #    path('archive/today/',views.PostTAV,name='PostTAV'),
     path('post/new/',views.PostN, name='PostN'),
     path('post/<int:pk>/edit/',views.PostE, name='PostE'),
-     path('delete/<int:post_id>/',views.delete, name='delete'),
-]
+    path('delete/<int:post_id>',views.delete, name='delete'),
 
+]

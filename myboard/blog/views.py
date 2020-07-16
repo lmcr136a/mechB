@@ -41,7 +41,7 @@ def PostN(request):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-        return redirect('PostDV', pk=post.pk)
+        return redirect('blog:PostDV', pk=post.pk)
     else:
         form = PostForm
     return render(request,'blog/post_edit.html',{'form':form})
@@ -61,9 +61,8 @@ def PostE(request,pk):
         form=PostForm(instance=post)
     return render(request,'blog/post_edit.html', {'form':form})
 
-def delete(request, post_id=1):
+def delete(request, post_id=None):
     post_to_delete=Post.objects.get(id=post_id)
     post_to_delete.delete()
-    posts=Post.objects.filter(pub_date__lte=timezone.now()).order_by('pub_date')
-    return render(request,'templates/blog/post_list.html',{'posts':posts})
+    return redirect('blog:PostLV')
 
