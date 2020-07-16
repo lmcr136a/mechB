@@ -67,3 +67,4 @@ def delete(request, post_id=None):
     post_to_delete.delete()
     return redirect('blog:PostLV')
 
+
