@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}    
+        {% for genealogy in genealogys %}
+        <div class="title">
+            <h3><a href="{% url 'genealogy:genealogy_detail' pk=genealogy.pk %}">&emsp;&emsp;&ensp;{{post.title}}</a></h3>
+        </div><span class="date">
+            <span>&emsp;&emsp;&emsp;&emsp;{{genealogy.author}}, </span>
+        </span><span class="author">
+            <span>&emsp;{{genealogy.pub_date | date:"N d, Y"}}</span>
+        </span><div class="content">
+            <p>&emsp;&emsp;&emsp;&emsp;{{genealogy.content|linebreaksbr}}</p>
+        </div>
+        <br><hr color="gray"><br><br>
+        {% endfor %}
+{% endblock %}

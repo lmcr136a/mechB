@@ -1,0 +1,26 @@
+{% extends 'html/genealogy_base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="genealogy">
+    {% if genealogy.pub_date %}
+        <a class="btn editBtn" href="{% url 'genealogy:edit_genealogy' pk=genealogy.pk %}"><span>edit</span></a>
+    {% endif %}
+    <a class="btn deleteBtn" href="{% url 'genealogy:delete_genealogy' genealogy.id %}">Delete</a>
+  
+    <div class="content">
+    <h1>{{ genealogy.title }}</h1>
+    <div class="date">{{genealogy.pub_date}}</div>
+    {% if genealogy.content == Null %}
+        <p>not content</p>
+    {% else %}
+        <p>{{ genealogy.content | linebreaksbr }}</p>
+    {% endif %}
+    </div>
+
+    {% if genealogy.file %}
+    <span class="download">Download : </span>
+    <a href="{% url 'genealogy:download_genealogy' genealogy.id %}" download>{{ genealogy.filename }}</a>
+    {% endif %}
+    </div>
+{% endblock %}

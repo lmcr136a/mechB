@@ -1,0 +1,93 @@
+
+
+#home_title{
+    color: rgb(77, 80, 107);  
+    margin-left: 20vw;
+    margin-top: 30vh;
+    margin-bottom: 20vh;
+    font-size: 30px;
+}
+
+
+#to_genealogy{
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(77, 80, 107);
+}
+
+.to_genealogy{    
+    padding: 10px;
+    margin-left: 10vw;
+    width: 30vw;
+    height: 30vh;
+    float: left;
+}
+
+.to_board{
+    width: 30vw;
+    height: 30vh;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.blank{
+    clear: both;
+}
+
+#to_board{
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(77, 80, 107);
+}
+
+#to_board:hover, #to_genealogy:hover{
+    color: rgb(33, 79, 204);
+
+}
+
+.gen_content, .board_content{
+    margin-left: 1vw;
+    color: rgb(111, 114, 143);
+}
+
+
+/* navication bar */
+
+#nav-img{
+    height: 80px;
+    width: 80px;
+}
+
+#nav-btn{
+    border: 0;
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    right: 80px;
+    bottom: 80px;
+    padding: 10px;
+    z-index: 999;
+}
+
+#side-bar{
+    position: fixed;
+    top: 0;
+    width: 40vw;
+    right: -40vw;
+    height: 100vh;
+    background: rgba(10, 10, 20, 0.9);
+    transition: all 0.3s;
+}
+
+.side-menu{
+    text-decoration: none !important;
+    margin: 40px !important;
+    color: white !important;
+    margin-left: 10vw !important;
+    font-size: 18px !important;   
+}
+
+.first-side-menu{
+    color: white !important;
+    text-decoration: none !important;
+}

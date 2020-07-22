@@ -1,0 +1,37 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>:: MECH B</title>
+    <link rel="stylesheet" href="{% static 'static/css/post_base.css' %}">
+</head>
+
+<body>
+    <div class="page-header">
+        <h1><a href="{% url 'board:post_list' %}">GUEST BOOK</a></h1>
+    </div>
+    <br><br>
+    <hr class="head-hr">
+    <a href="{% url 'board:new_post' %}" class="new-btn">New Post<span class="plus"></span></a>
+
+    <div class="container">
+        {% block content%}
+        {% endblock %}
+    </div>
+
+    <button type="button" id="nav-btn">
+        <img id="nav-img" src="{% static 'static/img/navIcon.png' %}" alt="btnImages">
+    </button>
+
+    <div id="side-bar">
+        <div><a href="{% url 'account:home_view' %}"  class="side-menu">Home</a>
+        <div class="side-menu"><a href="{% url 'genealogy:genealogy_list' %}" class="first-side-menu">DOWNLOAD GENEALOGY</a>
+        </div><div><a href="{% url 'board:post_list' %}"  class="side-menu">GUEST BOARD</a>
+        </div><p class="side-menu">MY POST</p>
+        <p class="side-menu">MY INFO</p>
+        <div><a href="{% url 'account:logout' %}"  class="side-menu">LOGOUT</a>
+        </div>
+    </div>
+</body>
+<script src="{% static 'static/js/navbtn.js' %}"></script>
+</html>

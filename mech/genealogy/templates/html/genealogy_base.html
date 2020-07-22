@@ -1,0 +1,23 @@
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <title>:: MECH B</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/blog/post_list.css' %}">
+</head>
+
+<body>
+    <div class="page-header">
+        <h1><a href="{% url 'genealogy:genealogy_list' %}">Genealogy</a></h1>
+    </div>
+    <br><br>
+    <a href="{% url 'genealogy:new_genealogy' %}" class="top-menu">Upload New Genealogy<span class="plus"></span></a>
+
+    <div class="content container">
+        {% block content%}
+        {% endblock %}
+    </div>
+
+</body>

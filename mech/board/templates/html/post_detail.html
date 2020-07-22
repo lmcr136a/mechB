@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="post">
+    {% if post.pub_date %}
+
+        <br><br>
+        <a class="btn editBtn" href="{% url 'blog:PostE' pk=post.pk %}"><span>edit</span></a>
+    {% endif %}
+
+    <a class="btn deleteBtn" href="{% url 'blog:delete' post.id %}">Delete</a>
+
+    <h1>{{ post.title }}</h1>
+    <div class="date">{{post.pub_date}}</div>
+    <br>
+    {% if post.content == Null %}
+        <p>not content</p>
+    {% else %}
+        <p>{{ post.content | linebreaksbr }}</p>
+    {% endif %}
+</div>
+{% endblock %}

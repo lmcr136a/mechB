@@ -1,0 +1,93 @@
+#login_title{
+    text-decoration: none;
+    color: rgb(80, 80, 100)
+}
+.page-header{  
+    margin-left: 23vw;
+    margin-top: 25vh;
+    margin-bottom: 10vh;
+}
+
+.container{
+    margin-left: 10vw;
+}
+.login_btn{
+    color: rgb(80, 80, 100);
+    font-size: 20px;
+    border: 0;
+    padding: 10px;
+    margin-left: 10vw;
+}
+
+.login_btn:hover{
+    color: rgb(67, 67, 85);
+}
+
+.signup_btn{
+    text-decoration: none;
+    color: rgb(80, 80, 100);
+    font-size: 20px;
+    border: 0;
+    padding: 10px;
+    margin-left: 25vw;
+}
+
+.signup_btn:hover{
+    font-size: 25px;
+}
+
+a:link{
+    color: rgb(33, 85, 153);  
+    font-weight: 500;
+}
+
+a:visited{
+    color: rgb(33, 85, 153);  
+}
+
+a:active{
+        color: rgb(80, 80, 100);  
+}
+
+a:hover{
+    color: rgb(0, 114, 221);  
+}
+
+#signup_blank1{
+    border: 0;
+    height: 30px;
+    margin: 5px;
+    background-color: rgb(228, 228, 236);
+    width: 300px;
+}
+
+#signup_blank2{
+    border: 0;
+    height: 30px;
+    margin: 5px;
+    background-color: rgb(228, 228, 236);
+    width: 305px;
+}
+
+#signup_blank3{
+    border: 0;
+    height: 30px;
+    margin: 5px;
+    background-color: rgb(228, 228, 236);
+    width: 242px;
+}
+
+.login_blank_username{
+    border: 0;
+    height: 30px;
+    margin: 5px;
+    background-color: rgb(228, 228, 236);
+    width: 300px;
+}
+.login_blank_password{
+    border: 0;
+    height: 30px;
+    margin: 5px;
+    background-color: rgb(228, 228, 236);
+    width: 305px;
+}

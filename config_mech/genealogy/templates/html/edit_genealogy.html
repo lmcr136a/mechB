@@ -1,0 +1,10 @@
+{% extends 'html/genealogy_base.html' %}
+
+{% block content %}
+    <h2>Upload new genealogy</h2>
+    <form class="edit-form" method="POST" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="savebtn">Save</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'html/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="post">
+    {% if genealogy.pub_date %}
+
+        <br><br>
+        <a class="btn editBtn" href="{% url 'genealogy:edit_genealogy' pk=genealogy.pk %}"><span>edit</span></a>
+    {% endif %}
+
+    <a class="btn deleteBtn" href="{% url 'genealogy:delete_genealogy' genealogy.id %}">Delete</a>
+
+    <h1>{{ genealogy.title }}</h1>
+    <div class="date">{{genealogy.pub_date}}</div>
+    <br>
+    {% if genealogy.content == Null %}
+        <p>not content</p>
+    {% else %}
+        <p>{{ genealogy.content | linebreaksbr }}</p>
+    {% endif %}
+</div>
+{% endblock %}
